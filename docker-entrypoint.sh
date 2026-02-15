@@ -39,6 +39,15 @@ define('PG4WP_ROOT', ABSPATH . 'wp-content/plugins/pg4wp/');" /var/www/html/wp-c
     printf '%s\n' "g/put your unique phrase here/d" a "$SALT" . w | ed -s /var/www/html/wp-config.php
 fi
 
+# Install PG4WP plugin at runtime
+if [ ! -d /var/www/html/wp-content/plugins/pg4wp ]; then
+    echo "Installing PG4WP plugin..."
+    cd /tmp
+    git clone --depth 1 --branch v3 https://github.com/PostgreSQL-For-Wordpress/postgresql-for-wordpress.git pg4wp-temp
+    mv pg4wp-temp /var/www/html/wp-content/plugins/pg4wp
+    cd /
+fi
+
 # Copy PG4WP db.php to wp-content
 if [ -f /var/www/html/wp-content/plugins/pg4wp/db.php ]; then
     cp /var/www/html/wp-content/plugins/pg4wp/db.php /var/www/html/wp-content/db.php
