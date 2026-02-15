@@ -6,24 +6,10 @@ services:
     plan: free
     envVars:
       - key: WORDPRESS_DB_HOST
-        fromDatabase:
-          name: wordpress-db
-          property: host
+        value: db.dvjymrcvmivauwetphha.supabase.co
       - key: WORDPRESS_DB_USER
-        fromDatabase:
-          name: wordpress-db
-          property: user
+        value: postgres
       - key: WORDPRESS_DB_PASSWORD
-        fromDatabase:
-          name: wordpress-db
-          property: password
+        sync: false
       - key: WORDPRESS_DB_NAME
-        fromDatabase:
-          name: wordpress-db
-          property: database
-
-databases:
-  - name: wordpress-db
-    plan: free
-    databaseName: wordpress
-    user: wordpress
+        value: postgres
