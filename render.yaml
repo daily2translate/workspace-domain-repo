@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: wordpress
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: WORDPRESS_DB_HOST
+        fromDatabase:
+          name: wordpress-db
+          property: host
+      - key: WORDPRESS_DB_USER
+        fromDatabase:
+          name: wordpress-db
+          property: user
+      - key: WORDPRESS_DB_PASSWORD
+        fromDatabase:
+          name: wordpress-db
+          property: password
+      - key: WORDPRESS_DB_NAME
+        fromDatabase:
+          name: wordpress-db
+          property: database
+
+databases:
+  - name: wordpress-db
+    plan: free
+    databaseName: wordpress
+    user: wordpress
