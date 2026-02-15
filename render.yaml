@@ -1,15 +1,29 @@
 services:
   - type: web
     name: wordpress
-    env: docker
-    dockerfilePath: ./Dockerfile
+    runtime: docker
     plan: free
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: WORDPRESS_DB_HOST
-        value: db.dvjymrcvmivauwetphha.supabase.co
+        fromDatabase:
+          name: wordpress-db
+          property: host
       - key: WORDPRESS_DB_USER
-        value: postgres
+        fromDatabase:
+          name: wordpress-db
+          property: user
       - key: WORDPRESS_DB_PASSWORD
-        sync: false
+        fromDatabase:
+          name: wordpress-db
+          property: password
       - key: WORDPRESS_DB_NAME
-        value: postgres
+        fromDatabase:
+          name: wordpress-db
+          property: database
+
+databases:
+  - name: wordpress-db
+    plan: free
+    databaseName: wordpress
+    user: wordpress
