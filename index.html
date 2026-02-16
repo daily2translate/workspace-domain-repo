@@ -142,15 +142,14 @@
         <p>Built with ❤️ using GitHub Pages and Supabase</p>
     </footer>
 
-    <script type="module">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
         // Supabase configuration
         const SUPABASE_URL = 'https://dvjymrcvmivauwetphha.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2anltcmN2bWl2YXV3ZXRwaGhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzExMzcwNzUsImV4cCI6MjA4NjcxMzA3NX0.9zlrYgMvle4Hf9eSaGNetcL-yHyN4Wcy-C8eZKU7L1s';
 
         // Initialize Supabase client
-        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
-
-        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         // Fetch and display posts
         async function loadPosts() {
