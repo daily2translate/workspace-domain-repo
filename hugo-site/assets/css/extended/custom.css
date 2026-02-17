@@ -1,18 +1,18 @@
-/* Cache-Buster: 1771308545 */
-/* AI-Themed Monochrome Design - Dark Mode Only */
+/* Philosophical Mind & Machine Theme */
+/* Exploring consciousness, thought, and being */
 
 :root,
 :root[data-theme="dark"],
 body,
 body[data-theme="dark"] {
-    --ai-black: #000000;
-    --ai-dark-gray: #0a0a0a;
-    --ai-medium-gray: #1a1a1a;
-    --ai-light-gray: #8a8a8a;
-    --ai-white: #f0f0f0;
-    --ai-accent: #ffffff;
-    --ai-border: #333333;
-    --ai-glow: rgba(255, 255, 255, 0.1);
+    --mind-black: #000000;
+    --mind-void: #0a0a0a;
+    --mind-depth: #1a1a1a;
+    --mind-thought: #8a8a8a;
+    --mind-clarity: #f0f0f0;
+    --mind-insight: #ffffff;
+    --mind-boundary: #333333;
+    --mind-consciousness: rgba(255, 255, 255, 0.1);
 
     /* Force dark theme colors */
     --theme: #000000;

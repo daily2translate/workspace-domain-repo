@@ -1,12 +1,12 @@
 baseURL = 'https://daily2translate.github.io/workspace-domain-repo/'
 languageCode = 'en-us'
-title = 'AI Research & Innovation'
+title = 'Mind & Machine'
 theme = 'PaperMod'
 
 [params]
-  description = 'Exploring the frontiers of Artificial Intelligence'
-  keywords = ['AI', 'Machine Learning', 'Deep Learning', 'Neural Networks']
-  author = 'AI Researcher'
+  description = 'Exploring the intersection of AI, Philosophy, Human Nature, and Psychology'
+  keywords = ['AI', 'Philosophy', 'Human Nature', 'Psychology', 'Consciousness', 'Ethics', 'Cognition']
+  author = 'Thoughtful Observer'
 
   ShowShareButtons = true
   ShowReadingTime = true
@@ -14,15 +14,15 @@ theme = 'PaperMod'
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
 
-  # AI Theme - Dark Mode Only
+  # Philosophical Dark Theme
   defaultTheme = 'dark'
   disableThemeToggle = true
 
   [params.homeInfoParams]
-    Title = 'AI Research & Innovation Hub'
+    Title = 'Mind & Machine'
     Content = '''
-Exploring the cutting edge of Artificial Intelligence, Machine Learning, and Neural Networks.
-Where human creativity meets computational intelligence.
+Where artificial intelligence meets human consciousness.
+Exploring the philosophy of mind, psychology of technology, and the nature of being.
     '''
 
   [[params.socialIcons]]
@@ -40,7 +40,7 @@ Where human creativity meets computational intelligence.
     url = '/'
     weight = 1
   [[menu.main]]
-    name = 'Research'
+    name = 'Thoughts'
     url = '/posts/'
     weight = 2
   [[menu.main]]
