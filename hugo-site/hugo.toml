@@ -14,9 +14,9 @@ theme = 'PaperMod'
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
 
-  # AI Theme - Monochrome Design
+  # AI Theme - Dark Mode Only
   defaultTheme = 'dark'
-  disableThemeToggle = false
+  disableThemeToggle = true
 
   [params.homeInfoParams]
     Title = 'AI Research & Innovation Hub'

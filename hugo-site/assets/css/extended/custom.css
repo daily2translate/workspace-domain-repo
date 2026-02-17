@@ -1,23 +1,47 @@
-/* AI-Themed Monochrome Design */
+/* AI-Themed Monochrome Design - Dark Mode Only */
 
-:root {
-    --ai-black: #0a0a0a;
-    --ai-dark-gray: #1a1a1a;
-    --ai-medium-gray: #2a2a2a;
+:root,
+:root[data-theme="dark"],
+body,
+body[data-theme="dark"] {
+    --ai-black: #000000;
+    --ai-dark-gray: #0a0a0a;
+    --ai-medium-gray: #1a1a1a;
     --ai-light-gray: #8a8a8a;
     --ai-white: #f0f0f0;
     --ai-accent: #ffffff;
     --ai-border: #333333;
     --ai-glow: rgba(255, 255, 255, 0.1);
+
+    /* Force dark theme colors */
+    --theme: #000000;
+    --entry: #0a0a0a;
+    --primary: rgba(255, 255, 255, 0.9);
+    --secondary: rgba(255, 255, 255, 0.6);
+    --tertiary: rgba(255, 255, 255, 0.4);
+    --content: rgba(255, 255, 255, 0.8);
+    --hljs-bg: #0a0a0a;
+    --code-bg: #0a0a0a;
+    --border: #333333;
 }
 
-/* Neural Network Background Pattern */
-body {
-    background-color: var(--ai-black);
+/* Neural Network Background Pattern - Pure Black */
+body,
+html {
+    background-color: #000000 !important;
     background-image:
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
     background-attachment: fixed;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Force all potential background elements to black */
+.main,
+.page-header,
+.post,
+article {
+    background-color: transparent !important;
 }
 
 /* AI Geometric Patterns */
