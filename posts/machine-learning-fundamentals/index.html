@@ -1,112 +1,959 @@
-<!doctype html><html lang=en dir=auto data-theme=dark><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Machine Learning Fundamentals | AI Research & Innovation</title><meta name=keywords content="Machine Learning,Basics,AI"><meta name=description content="Core concepts every AI practitioner should understand"><meta name=author content="AI Researcher"><link rel=canonical href=https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/><link crossorigin=anonymous href=/workspace-domain-repo/assets/css/stylesheet.9dc3a986417c86df11f235e77a60dde9cd122ecb2799f63d6eb5ca9710e59841.css integrity="sha256-ncOphkF8ht8R8jXnemDd6c0SLssnmfY9brXKlxDlmEE=" rel="preload stylesheet" as=style><link rel=icon href=https://daily2translate.github.io/images/ai-icon.svg><link rel=icon type=image/png sizes=16x16 href=https://daily2translate.github.io/images/ai-icon.svg><link rel=icon type=image/png sizes=32x32 href=https://daily2translate.github.io/images/ai-icon.svg><link rel=apple-touch-icon href=https://daily2translate.github.io/workspace-domain-repo/apple-touch-icon.png><link rel=mask-icon href=https://daily2translate.github.io/workspace-domain-repo/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel=stylesheet><style>body{font-family:inter,-apple-system,BlinkMacSystemFont,segoe ui,sans-serif}code,pre,.post-title{font-family:jetbrains mono,sf mono,monaco,monospace}</style><meta name=theme-color content="#0a0a0a"><meta name=description content="AI Research & Innovation - Exploring the frontiers of Artificial Intelligence"><meta property="og:url" content="https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/"><meta property="og:site_name" content="AI Research & Innovation"><meta property="og:title" content="Machine Learning Fundamentals"><meta property="og:description" content="Core concepts every AI practitioner should understand"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-15T00:00:00+00:00"><meta property="article:modified_time" content="2024-02-15T00:00:00+00:00"><meta property="article:tag" content="Machine Learning"><meta property="article:tag" content="Basics"><meta property="article:tag" content="AI"><meta name=twitter:card content="summary"><meta name=twitter:title content="Machine Learning Fundamentals"><meta name=twitter:description content="Core concepts every AI practitioner should understand"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://daily2translate.github.io/workspace-domain-repo/posts/"},{"@type":"ListItem","position":2,"name":"Machine Learning Fundamentals","item":"https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Machine Learning Fundamentals","name":"Machine Learning Fundamentals","description":"Core concepts every AI practitioner should understand","keywords":["Machine Learning","Basics","AI"],"articleBody":"What is Machine Learning? Machine learning is the science of programming computers to learn from data without being explicitly programmed. Rather than writing rules, we provide examples and let algorithms discover patterns.\nTypes of Learning Supervised Learning Learning from labeled examples to make predictions:\nfrom sklearn.linear_model import LogisticRegression from sklearn.model_selection import train_test_split # Training data: features and labels X_train, X_test, y_train, y_test = train_test_split( features, labels, test_size=0.2, random_state=42 ) # Train model model = LogisticRegression() model.fit(X_train, y_train) # Make predictions predictions = model.predict(X_test) Common Algorithms:\nLinear/Logistic Regression Decision Trees Random Forests Support Vector Machines Neural Networks Unsupervised Learning Discovering hidden patterns in unlabeled data:\nfrom sklearn.cluster import KMeans # Cluster data into groups kmeans = KMeans(n_clusters=3, random_state=42) clusters = kmeans.fit_predict(data) Applications:\nClustering (K-means, DBSCAN) Dimensionality Reduction (PCA, t-SNE) Anomaly Detection Association Rules Reinforcement Learning Learning through interaction and feedback:\nAgent: The learner/decision maker Environment: What the agent interacts with Actions: What the agent can do Rewards: Feedback from environment Policy: Strategy for choosing actions The Machine Learning Workflow 1. Data Collection Gather relevant, representative data\n2. Data Preprocessing from sklearn.preprocessing import StandardScaler # Handle missing values data = data.fillna(data.mean()) # Scale features scaler = StandardScaler() scaled_data = scaler.fit_transform(data) # Encode categorical variables from sklearn.preprocessing import LabelEncoder encoder = LabelEncoder() encoded_labels = encoder.fit_transform(categories) 3. Feature Engineering Create meaningful representations:\nDomain knowledge application Feature selection Feature extraction Dimensionality reduction 4. Model Selection Choose appropriate algorithms based on:\nProblem type (classification, regression, clustering) Data characteristics Performance requirements Interpretability needs 5. Training \u0026 Validation from sklearn.model_selection import cross_val_score # Cross-validation scores = cross_val_score(model, X, y, cv=5) print(f\"Accuracy: {scores.mean():.3f} (+/- {scores.std():.3f})\") 6. Hyperparameter Tuning from sklearn.model_selection import GridSearchCV param_grid = { 'n_estimators': [50, 100, 200], 'max_depth': [5, 10, 15], 'min_samples_split': [2, 5, 10] } grid_search = GridSearchCV( RandomForestClassifier(), param_grid, cv=5, scoring='accuracy' ) grid_search.fit(X_train, y_train) best_model = grid_search.best_estimator_ 7. Evaluation Use appropriate metrics:\nClassification:\nAccuracy, Precision, Recall F1-Score ROC-AUC Confusion Matrix Regression:\nMean Squared Error (MSE) Root Mean Squared Error (RMSE) Mean Absolute Error (MAE) R² Score Common Challenges Overfitting Model performs well on training data but poorly on new data.\nSolutions:\nCross-validation Regularization (L1, L2) More training data Simpler models Early stopping Underfitting Model is too simple to capture patterns.\nSolutions:\nMore complex models Better features Reduce regularization Train longer Class Imbalance Unequal representation of classes.\nSolutions:\nResampling (over/under-sampling) Class weights Synthetic data (SMOTE) Anomaly detection approaches Curse of Dimensionality Too many features relative to samples.\nSolutions:\nFeature selection Dimensionality reduction More data Regularization Best Practices Data Splitting # Train, validation, and test sets X_train, X_temp, y_train, y_temp = train_test_split( X, y, test_size=0.3, random_state=42 ) X_val, X_test, y_val, y_test = train_test_split( X_temp, y_temp, test_size=0.5, random_state=42 ) Pipeline Creation from sklearn.pipeline import Pipeline from sklearn.preprocessing import StandardScaler from sklearn.decomposition import PCA pipeline = Pipeline([ ('scaler', StandardScaler()), ('pca', PCA(n_components=10)), ('classifier', LogisticRegression()) ]) pipeline.fit(X_train, y_train) Model Persistence import joblib # Save model joblib.dump(model, 'model.pkl') # Load model loaded_model = joblib.load('model.pkl') Gradient Descent The optimization algorithm powering most ML:\ndef gradient_descent(X, y, learning_rate=0.01, epochs=1000): m, n = X.shape weights = np.zeros(n) bias = 0 for epoch in range(epochs): # Forward pass predictions = np.dot(X, weights) + bias # Compute gradients dw = (1/m) * np.dot(X.T, (predictions - y)) db = (1/m) * np.sum(predictions - y) # Update parameters weights -= learning_rate * dw bias -= learning_rate * db return weights, bias Model Interpretation Understanding model decisions:\n# Feature importance importances = model.feature_importances_ for feature, importance in zip(feature_names, importances): print(f\"{feature}: {importance:.4f}\") # Partial dependence plots from sklearn.inspection import PartialDependenceDisplay PartialDependenceDisplay.from_estimator(model, X, features=[0, 1]) Conclusion Machine learning is a powerful toolkit for extracting insights from data. Success requires understanding fundamentals, careful data preparation, thoughtful model selection, and rigorous evaluation.\nThe field continues to evolve rapidly, but these core principles remain essential for any practitioner.\nLearn, iterate, improve.\n","wordCount":"626","inLanguage":"en","datePublished":"2024-02-15T00:00:00Z","dateModified":"2024-02-15T00:00:00Z","author":{"@type":"Person","name":"AI Researcher"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/"},"publisher":{"@type":"Organization","name":"AI Research \u0026 Innovation","logo":{"@type":"ImageObject","url":"https://daily2translate.github.io/images/ai-icon.svg"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://daily2translate.github.io/workspace-domain-repo/ accesskey=h title="AI Research & Innovation (Alt + H)">AI Research & Innovation</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://daily2translate.github.io/workspace-domain-repo/ title=Home><span>Home</span></a></li><li><a href=https://daily2translate.github.io/workspace-domain-repo/posts/ title=Research><span>Research</span></a></li><li><a href=https://daily2translate.github.io/workspace-domain-repo/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://daily2translate.github.io/workspace-domain-repo/>Home</a>&nbsp;»&nbsp;<a href=https://daily2translate.github.io/workspace-domain-repo/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Machine Learning Fundamentals</h1><div class=post-description>Core concepts every AI practitioner should understand</div><div class=post-meta><span title='2024-02-15 00:00:00 +0000 UTC'>February 15, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>AI Researcher</span></div></header><div class=post-content><h2 id=what-is-machine-learning>What is Machine Learning?<a hidden class=anchor aria-hidden=true href=#what-is-machine-learning>#</a></h2><p>Machine learning is the science of programming computers to learn from data without being explicitly programmed. Rather than writing rules, we provide examples and let algorithms discover patterns.</p><h2 id=types-of-learning>Types of Learning<a hidden class=anchor aria-hidden=true href=#types-of-learning>#</a></h2><h3 id=supervised-learning>Supervised Learning<a hidden class=anchor aria-hidden=true href=#supervised-learning>#</a></h3><p>Learning from labeled examples to make predictions:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.linear_model <span style=color:#f92672>import</span> LogisticRegression
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.model_selection <span style=color:#f92672>import</span> train_test_split
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Training data: features and labels</span>
-</span></span><span style=display:flex><span>X_train, X_test, y_train, y_test <span style=color:#f92672>=</span> train_test_split(
-</span></span><span style=display:flex><span>    features, labels, test_size<span style=color:#f92672>=</span><span style=color:#ae81ff>0.2</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>
-</span></span><span style=display:flex><span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Train model</span>
-</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> LogisticRegression()
-</span></span><span style=display:flex><span>model<span style=color:#f92672>.</span>fit(X_train, y_train)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Make predictions</span>
-</span></span><span style=display:flex><span>predictions <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>predict(X_test)
-</span></span></code></pre></div><p><strong>Common Algorithms</strong>:</p><ul><li>Linear/Logistic Regression</li><li>Decision Trees</li><li>Random Forests</li><li>Support Vector Machines</li><li>Neural Networks</li></ul><h3 id=unsupervised-learning>Unsupervised Learning<a hidden class=anchor aria-hidden=true href=#unsupervised-learning>#</a></h3><p>Discovering hidden patterns in unlabeled data:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.cluster <span style=color:#f92672>import</span> KMeans
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Cluster data into groups</span>
-</span></span><span style=display:flex><span>kmeans <span style=color:#f92672>=</span> KMeans(n_clusters<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>)
-</span></span><span style=display:flex><span>clusters <span style=color:#f92672>=</span> kmeans<span style=color:#f92672>.</span>fit_predict(data)
-</span></span></code></pre></div><p><strong>Applications</strong>:</p><ul><li>Clustering (K-means, DBSCAN)</li><li>Dimensionality Reduction (PCA, t-SNE)</li><li>Anomaly Detection</li><li>Association Rules</li></ul><h3 id=reinforcement-learning>Reinforcement Learning<a hidden class=anchor aria-hidden=true href=#reinforcement-learning>#</a></h3><p>Learning through interaction and feedback:</p><ul><li><strong>Agent</strong>: The learner/decision maker</li><li><strong>Environment</strong>: What the agent interacts with</li><li><strong>Actions</strong>: What the agent can do</li><li><strong>Rewards</strong>: Feedback from environment</li><li><strong>Policy</strong>: Strategy for choosing actions</li></ul><h2 id=the-machine-learning-workflow>The Machine Learning Workflow<a hidden class=anchor aria-hidden=true href=#the-machine-learning-workflow>#</a></h2><h3 id=1-data-collection>1. Data Collection<a hidden class=anchor aria-hidden=true href=#1-data-collection>#</a></h3><p>Gather relevant, representative data</p><h3 id=2-data-preprocessing>2. Data Preprocessing<a hidden class=anchor aria-hidden=true href=#2-data-preprocessing>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> StandardScaler
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Handle missing values</span>
-</span></span><span style=display:flex><span>data <span style=color:#f92672>=</span> data<span style=color:#f92672>.</span>fillna(data<span style=color:#f92672>.</span>mean())
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Scale features</span>
-</span></span><span style=display:flex><span>scaler <span style=color:#f92672>=</span> StandardScaler()
-</span></span><span style=display:flex><span>scaled_data <span style=color:#f92672>=</span> scaler<span style=color:#f92672>.</span>fit_transform(data)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Encode categorical variables</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> LabelEncoder
-</span></span><span style=display:flex><span>encoder <span style=color:#f92672>=</span> LabelEncoder()
-</span></span><span style=display:flex><span>encoded_labels <span style=color:#f92672>=</span> encoder<span style=color:#f92672>.</span>fit_transform(categories)
-</span></span></code></pre></div><h3 id=3-feature-engineering>3. Feature Engineering<a hidden class=anchor aria-hidden=true href=#3-feature-engineering>#</a></h3><p>Create meaningful representations:</p><ul><li>Domain knowledge application</li><li>Feature selection</li><li>Feature extraction</li><li>Dimensionality reduction</li></ul><h3 id=4-model-selection>4. Model Selection<a hidden class=anchor aria-hidden=true href=#4-model-selection>#</a></h3><p>Choose appropriate algorithms based on:</p><ul><li>Problem type (classification, regression, clustering)</li><li>Data characteristics</li><li>Performance requirements</li><li>Interpretability needs</li></ul><h3 id=5-training--validation>5. Training & Validation<a hidden class=anchor aria-hidden=true href=#5-training--validation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.model_selection <span style=color:#f92672>import</span> cross_val_score
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Cross-validation</span>
-</span></span><span style=display:flex><span>scores <span style=color:#f92672>=</span> cross_val_score(model, X, y, cv<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>)
-</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Accuracy: </span><span style=color:#e6db74>{</span>scores<span style=color:#f92672>.</span>mean()<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74> (+/- </span><span style=color:#e6db74>{</span>scores<span style=color:#f92672>.</span>std()<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>)
-</span></span></code></pre></div><h3 id=6-hyperparameter-tuning>6. Hyperparameter Tuning<a hidden class=anchor aria-hidden=true href=#6-hyperparameter-tuning>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.model_selection <span style=color:#f92672>import</span> GridSearchCV
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>param_grid <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;n_estimators&#39;</span>: [<span style=color:#ae81ff>50</span>, <span style=color:#ae81ff>100</span>, <span style=color:#ae81ff>200</span>],
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;max_depth&#39;</span>: [<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>15</span>],
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;min_samples_split&#39;</span>: [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>10</span>]
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>grid_search <span style=color:#f92672>=</span> GridSearchCV(
-</span></span><span style=display:flex><span>    RandomForestClassifier(),
-</span></span><span style=display:flex><span>    param_grid,
-</span></span><span style=display:flex><span>    cv<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>,
-</span></span><span style=display:flex><span>    scoring<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;accuracy&#39;</span>
-</span></span><span style=display:flex><span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>grid_search<span style=color:#f92672>.</span>fit(X_train, y_train)
-</span></span><span style=display:flex><span>best_model <span style=color:#f92672>=</span> grid_search<span style=color:#f92672>.</span>best_estimator_
-</span></span></code></pre></div><h3 id=7-evaluation>7. Evaluation<a hidden class=anchor aria-hidden=true href=#7-evaluation>#</a></h3><p>Use appropriate metrics:</p><p><strong>Classification</strong>:</p><ul><li>Accuracy, Precision, Recall</li><li>F1-Score</li><li>ROC-AUC</li><li>Confusion Matrix</li></ul><p><strong>Regression</strong>:</p><ul><li>Mean Squared Error (MSE)</li><li>Root Mean Squared Error (RMSE)</li><li>Mean Absolute Error (MAE)</li><li>R² Score</li></ul><h2 id=common-challenges>Common Challenges<a hidden class=anchor aria-hidden=true href=#common-challenges>#</a></h2><h3 id=overfitting>Overfitting<a hidden class=anchor aria-hidden=true href=#overfitting>#</a></h3><p>Model performs well on training data but poorly on new data.</p><p><strong>Solutions</strong>:</p><ul><li>Cross-validation</li><li>Regularization (L1, L2)</li><li>More training data</li><li>Simpler models</li><li>Early stopping</li></ul><h3 id=underfitting>Underfitting<a hidden class=anchor aria-hidden=true href=#underfitting>#</a></h3><p>Model is too simple to capture patterns.</p><p><strong>Solutions</strong>:</p><ul><li>More complex models</li><li>Better features</li><li>Reduce regularization</li><li>Train longer</li></ul><h3 id=class-imbalance>Class Imbalance<a hidden class=anchor aria-hidden=true href=#class-imbalance>#</a></h3><p>Unequal representation of classes.</p><p><strong>Solutions</strong>:</p><ul><li>Resampling (over/under-sampling)</li><li>Class weights</li><li>Synthetic data (SMOTE)</li><li>Anomaly detection approaches</li></ul><h3 id=curse-of-dimensionality>Curse of Dimensionality<a hidden class=anchor aria-hidden=true href=#curse-of-dimensionality>#</a></h3><p>Too many features relative to samples.</p><p><strong>Solutions</strong>:</p><ul><li>Feature selection</li><li>Dimensionality reduction</li><li>More data</li><li>Regularization</li></ul><h2 id=best-practices>Best Practices<a hidden class=anchor aria-hidden=true href=#best-practices>#</a></h2><h3 id=data-splitting>Data Splitting<a hidden class=anchor aria-hidden=true href=#data-splitting>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Train, validation, and test sets</span>
-</span></span><span style=display:flex><span>X_train, X_temp, y_train, y_temp <span style=color:#f92672>=</span> train_test_split(
-</span></span><span style=display:flex><span>    X, y, test_size<span style=color:#f92672>=</span><span style=color:#ae81ff>0.3</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>
-</span></span><span style=display:flex><span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>X_val, X_test, y_val, y_test <span style=color:#f92672>=</span> train_test_split(
-</span></span><span style=display:flex><span>    X_temp, y_temp, test_size<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>
-</span></span><span style=display:flex><span>)
-</span></span></code></pre></div><h3 id=pipeline-creation>Pipeline Creation<a hidden class=anchor aria-hidden=true href=#pipeline-creation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.pipeline <span style=color:#f92672>import</span> Pipeline
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> StandardScaler
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.decomposition <span style=color:#f92672>import</span> PCA
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>pipeline <span style=color:#f92672>=</span> Pipeline([
-</span></span><span style=display:flex><span>    (<span style=color:#e6db74>&#39;scaler&#39;</span>, StandardScaler()),
-</span></span><span style=display:flex><span>    (<span style=color:#e6db74>&#39;pca&#39;</span>, PCA(n_components<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>)),
-</span></span><span style=display:flex><span>    (<span style=color:#e6db74>&#39;classifier&#39;</span>, LogisticRegression())
-</span></span><span style=display:flex><span>])
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>pipeline<span style=color:#f92672>.</span>fit(X_train, y_train)
-</span></span></code></pre></div><h3 id=model-persistence>Model Persistence<a hidden class=anchor aria-hidden=true href=#model-persistence>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> joblib
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Save model</span>
-</span></span><span style=display:flex><span>joblib<span style=color:#f92672>.</span>dump(model, <span style=color:#e6db74>&#39;model.pkl&#39;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Load model</span>
-</span></span><span style=display:flex><span>loaded_model <span style=color:#f92672>=</span> joblib<span style=color:#f92672>.</span>load(<span style=color:#e6db74>&#39;model.pkl&#39;</span>)
-</span></span></code></pre></div><h2 id=gradient-descent>Gradient Descent<a hidden class=anchor aria-hidden=true href=#gradient-descent>#</a></h2><p>The optimization algorithm powering most ML:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>gradient_descent</span>(X, y, learning_rate<span style=color:#f92672>=</span><span style=color:#ae81ff>0.01</span>, epochs<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>):
-</span></span><span style=display:flex><span>    m, n <span style=color:#f92672>=</span> X<span style=color:#f92672>.</span>shape
-</span></span><span style=display:flex><span>    weights <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>zeros(n)
-</span></span><span style=display:flex><span>    bias <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> epoch <span style=color:#f92672>in</span> range(epochs):
-</span></span><span style=display:flex><span>        <span style=color:#75715e># Forward pass</span>
-</span></span><span style=display:flex><span>        predictions <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>dot(X, weights) <span style=color:#f92672>+</span> bias
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># Compute gradients</span>
-</span></span><span style=display:flex><span>        dw <span style=color:#f92672>=</span> (<span style=color:#ae81ff>1</span><span style=color:#f92672>/</span>m) <span style=color:#f92672>*</span> np<span style=color:#f92672>.</span>dot(X<span style=color:#f92672>.</span>T, (predictions <span style=color:#f92672>-</span> y))
-</span></span><span style=display:flex><span>        db <span style=color:#f92672>=</span> (<span style=color:#ae81ff>1</span><span style=color:#f92672>/</span>m) <span style=color:#f92672>*</span> np<span style=color:#f92672>.</span>sum(predictions <span style=color:#f92672>-</span> y)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># Update parameters</span>
-</span></span><span style=display:flex><span>        weights <span style=color:#f92672>-=</span> learning_rate <span style=color:#f92672>*</span> dw
-</span></span><span style=display:flex><span>        bias <span style=color:#f92672>-=</span> learning_rate <span style=color:#f92672>*</span> db
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> weights, bias
-</span></span></code></pre></div><h2 id=model-interpretation>Model Interpretation<a hidden class=anchor aria-hidden=true href=#model-interpretation>#</a></h2><p>Understanding model decisions:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Feature importance</span>
-</span></span><span style=display:flex><span>importances <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>feature_importances_
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> feature, importance <span style=color:#f92672>in</span> zip(feature_names, importances):
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>feature<span style=color:#e6db74>}</span><span style=color:#e6db74>: </span><span style=color:#e6db74>{</span>importance<span style=color:#e6db74>:</span><span style=color:#e6db74>.4f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Partial dependence plots</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.inspection <span style=color:#f92672>import</span> PartialDependenceDisplay
-</span></span><span style=display:flex><span>PartialDependenceDisplay<span style=color:#f92672>.</span>from_estimator(model, X, features<span style=color:#f92672>=</span>[<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>])
-</span></span></code></pre></div><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>Machine learning is a powerful toolkit for extracting insights from data. Success requires understanding fundamentals, careful data preparation, thoughtful model selection, and rigorous evaluation.</p><p>The field continues to evolve rapidly, but these core principles remain essential for any practitioner.</p><hr><p><em>Learn, iterate, improve.</em></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://daily2translate.github.io/workspace-domain-repo/tags/machine-learning/>Machine Learning</a></li><li><a href=https://daily2translate.github.io/workspace-domain-repo/tags/basics/>Basics</a></li><li><a href=https://daily2translate.github.io/workspace-domain-repo/tags/ai/>AI</a></li></ul><nav class=paginav><a class=prev href=https://daily2translate.github.io/workspace-domain-repo/posts/transformer-architecture/><span class=title>« Prev</span><br><span>The Transformer Architecture Revolution</span>
-</a><a class=next href=https://daily2translate.github.io/workspace-domain-repo/posts/welcome/><span class=title>Next »</span><br><span>Welcome to AI Research Hub</span></a></nav><ul class=share-buttons><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on x" href="https://x.com/intent/tweet/?text=Machine%20Learning%20Fundamentals&amp;url=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f&amp;hashtags=MachineLearning%2cBasics%2cAI"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f&amp;title=Machine%20Learning%20Fundamentals&amp;summary=Machine%20Learning%20Fundamentals&amp;source=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f&title=Machine%20Learning%20Fundamentals"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on whatsapp" href="https://api.whatsapp.com/send?text=Machine%20Learning%20Fundamentals%20-%20https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on telegram" href="https://telegram.me/share/url?text=Machine%20Learning%20Fundamentals&amp;url=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f"><svg viewBox="2 2 28 28" height="30" width="30" fill="currentColor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on ycombinator" href="https://news.ycombinator.com/submitlink?t=Machine%20Learning%20Fundamentals&u=https%3a%2f%2fdaily2translate.github.io%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f"><svg width="30" height="30" viewBox="0 0 512 512" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"/></svg></a></li></ul></footer></article></main><footer class=footer><span>&copy; 2026 <a href=https://daily2translate.github.io/workspace-domain-repo/>AI Research & Innovation</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>class ParticleSystem{constructor(){if(this.canvas=document.getElementById("particle-canvas"),!this.canvas)return;this.ctx=this.canvas.getContext("2d"),this.particles=[],this.connections=[],this.mousePos={x:0,y:0},this.resize(),this.init(),this.animate(),window.addEventListener("resize",()=>this.resize()),document.addEventListener("mousemove",e=>{this.mousePos.x=e.clientX,this.mousePos.y=e.clientY})}resize(){this.canvas.width=window.innerWidth,this.canvas.height=window.innerHeight}init(){const e=Math.floor(this.canvas.width*this.canvas.height/15e3);for(let t=0;t<e;t++)this.particles.push({x:Math.random()*this.canvas.width,y:Math.random()*this.canvas.height,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,radius:Math.random()*2+1,opacity:Math.random()*.5+.2})}animate(){this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height),this.particles.forEach((e,t)=>{e.x+=e.vx,e.y+=e.vy;const s=this.mousePos.x-e.x,o=this.mousePos.y-e.y,n=(s*s+o*o)**.5;if(n<150){const t=(150-n)/150;e.vx-=s/n*t*.2,e.vy-=o/n*t*.2}(e.x<0||e.x>this.canvas.width)&&(e.vx*=-1),(e.y<0||e.y>this.canvas.height)&&(e.vy*=-1),this.ctx.beginPath(),this.ctx.arc(e.x,e.y,e.radius,0,Math.PI*2),this.ctx.fillStyle=`rgba(255, 255, 255, ${e.opacity})`,this.ctx.fill(),this.particles.slice(t+1).forEach(t=>{const n=e.x-t.x,s=e.y-t.y,o=(n*n+s*s)**.5;if(o<120){this.ctx.beginPath(),this.ctx.moveTo(e.x,e.y),this.ctx.lineTo(t.x,t.y);const n=(1-o/120)*.3;this.ctx.strokeStyle=`rgba(255, 255, 255, ${n})`,this.ctx.lineWidth=.5,this.ctx.stroke()}})}),requestAnimationFrame(()=>this.animate())}}class DataStream{constructor(){if(this.container=document.getElementById("data-stream"),!this.container)return;this.createStreams()}createStreams(){const e=5;for(let t=0;t<e;t++)setTimeout(()=>this.createStream(),t*800);setInterval(()=>this.createStream(),4e3)}createStream(){const e=document.createElement("div");e.className="data-particle",e.style.left=Math.random()*100+"%",e.style.animationDelay=Math.random()*2+"s",e.style.animationDuration=Math.random()*3+3+"s";const t=["0","1","▪","▫","◆","○"][Math.floor(Math.random()*6)];e.textContent=t,this.container.appendChild(e),setTimeout(()=>e.remove(),6e3)}}class NeuralNetwork{constructor(){if(this.container=document.getElementById("neural-network"),!this.container)return;this.createNodes()}createNodes(){const e=8;for(let n=0;n<e;n++){const t=document.createElement("div");t.className="neural-node",t.style.left=Math.random()*100+"%",t.style.top=Math.random()*100+"%",t.style.animationDelay=Math.random()*3+"s",t.style.animationDuration=Math.random()*2+3+"s",this.container.appendChild(t)}}}class MatrixEffect{constructor(){const e=document.querySelectorAll(".post-entry, .first-entry");e.forEach(e=>{e.addEventListener("mouseenter",()=>{this.createMatrixRain(e)})})}createMatrixRain(e){const n="01ABCDEFGHIJKLMNOPQRSTUVWXYZ",t=document.createElement("div");t.className="matrix-rain",t.style.left=Math.random()*100+"%",t.textContent=n[Math.floor(Math.random()*n.length)],e.appendChild(t),setTimeout(()=>t.remove(),1500)}}class ScanLine{constructor(){const e=document.createElement("div");e.className="scan-line",document.body.appendChild(e)}}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",initScientificEffects):initScientificEffects();function initScientificEffects(){new ParticleSystem,new DataStream,new NeuralNetwork,new MatrixEffect,new ScanLine;const e=document.querySelector(".home-info .entry-header");e&&setInterval(()=>{e.style.textShadow="0 0 10px rgba(255,255,255,0.8)",setTimeout(()=>{e.style.textShadow="none"},100)},5e3)}</script><style>#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.6}#data-stream{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}.data-particle{position:absolute;top:-20px;color:rgba(255,255,255,.3);font-family:jetbrains mono,monospace;font-size:12px;animation:fall linear forwards;pointer-events:none}@keyframes fall{0%{transform:translateY(0)rotate(0);opacity:0}10%{opacity:.5}90%{opacity:.3}100%{transform:translateY(100vh)rotate(360deg);opacity:0}}#neural-network{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}.neural-node{position:absolute;width:4px;height:4px;background:rgba(255,255,255,.6);border-radius:50%;box-shadow:0 0 10px rgba(255,255,255,.5);animation:pulse ease-in-out infinite}@keyframes pulse{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(2);opacity:.8;box-shadow:0 0 20px rgba(255,255,255,.8)}}.matrix-rain{position:absolute;top:0;color:rgba(255,255,255,.5);font-family:jetbrains mono,monospace;font-size:14px;animation:matrix-fall 1.5s ease-out forwards;pointer-events:none}@keyframes matrix-fall{0%{transform:translateY(0);opacity:1}100%{transform:translateY(100px);opacity:0}}.scan-line{position:fixed;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent );animation:scan 8s linear infinite;pointer-events:none;z-index:100}@keyframes scan{0%{top:0;opacity:0}10%{opacity:.5}90%{opacity:.5}100%{top:100%;opacity:0}}.post-entry:hover,.first-entry:hover{box-shadow:0 0 30px rgba(255,255,255,.1),inset 0 0 30px rgba(255,255,255,5%),0 0 60px rgba(255,255,255,5%)!important}@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}.post-title::after{content:'▊';animation:blink 1s infinite;margin-left:5px;opacity:.3}.main{position:relative}.main::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:repeating-linear-gradient(0,rgba(255,255,255,3%) 0,transparent 1px,transparent 2px,rgba(255,255,255,3%) 3px),repeating-linear-gradient(90deg,rgba(255,255,255,3%) 0,transparent 1px,transparent 2px,rgba(255,255,255,3%) 3px);background-size:100px 100px;pointer-events:none;z-index:1;animation:grid-move 20s linear infinite}@keyframes grid-move{0%{background-position:0 0}100%{background-position:100px 100px}}.post-entry::before,.first-entry::before{background:linear-gradient( 45deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70% );background-size:200% 200%}.post-entry:hover::before,.first-entry:hover::before{animation:holographic 2s ease infinite}@keyframes holographic{0%{background-position:0}50%{background-position:100%}100%{background-position:0}}</style><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="dark">
+
+<head><script src="/workspace-domain-repo/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=workspace-domain-repo/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Machine Learning Fundamentals | AI Research &amp; Innovation</title>
+<meta name="keywords" content="Machine Learning, Basics, AI">
+<meta name="description" content="Core concepts every AI practitioner should understand">
+<meta name="author" content="AI Researcher">
+<link rel="canonical" href="http://localhost:1313/workspace-domain-repo/posts/machine-learning-fundamentals/">
+<link crossorigin="anonymous" href="/workspace-domain-repo/assets/css/stylesheet.9dc3a986417c86df11f235e77a60dde9cd122ecb2799f63d6eb5ca9710e59841.css" integrity="sha256-ncOphkF8ht8R8jXnemDd6c0SLssnmfY9brXKlxDlmEE=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/ai-icon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/ai-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/ai-icon.svg">
+<link rel="apple-touch-icon" href="http://localhost:1313/workspace-domain-repo/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/workspace-domain-repo/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/workspace-domain-repo/posts/machine-learning-fundamentals/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+ 
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+code, pre, .post-title {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Monaco', monospace;
+}
+</style>
+
+
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="AI Research & Innovation - Exploring the frontiers of Artificial Intelligence">
+
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/workspace-domain-repo/" accesskey="h" title="AI Research &amp; Innovation (Alt + H)">AI Research &amp; Innovation</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/workspace-domain-repo/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/workspace-domain-repo/posts/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/workspace-domain-repo/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/workspace-domain-repo/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/workspace-domain-repo/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Machine Learning Fundamentals
+    </h1>
+    <div class="post-description">
+      Core concepts every AI practitioner should understand
+    </div>
+    <div class="post-meta"><span title='2024-02-15 00:00:00 +0000 UTC'>February 15, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>AI Researcher</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="what-is-machine-learning">What is Machine Learning?<a hidden class="anchor" aria-hidden="true" href="#what-is-machine-learning">#</a></h2>
+<p>Machine learning is the science of programming computers to learn from data without being explicitly programmed. Rather than writing rules, we provide examples and let algorithms discover patterns.</p>
+<h2 id="types-of-learning">Types of Learning<a hidden class="anchor" aria-hidden="true" href="#types-of-learning">#</a></h2>
+<h3 id="supervised-learning">Supervised Learning<a hidden class="anchor" aria-hidden="true" href="#supervised-learning">#</a></h3>
+<p>Learning from labeled examples to make predictions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LogisticRegression
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Training data: features and labels</span>
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(
+</span></span><span style="display:flex;"><span>    features, labels, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Train model</span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> LogisticRegression()
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make predictions</span>
+</span></span><span style="display:flex;"><span>predictions <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(X_test)
+</span></span></code></pre></div><p><strong>Common Algorithms</strong>:</p>
+<ul>
+<li>Linear/Logistic Regression</li>
+<li>Decision Trees</li>
+<li>Random Forests</li>
+<li>Support Vector Machines</li>
+<li>Neural Networks</li>
+</ul>
+<h3 id="unsupervised-learning">Unsupervised Learning<a hidden class="anchor" aria-hidden="true" href="#unsupervised-learning">#</a></h3>
+<p>Discovering hidden patterns in unlabeled data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cluster data into groups</span>
+</span></span><span style="display:flex;"><span>kmeans <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>clusters <span style="color:#f92672">=</span> kmeans<span style="color:#f92672">.</span>fit_predict(data)
+</span></span></code></pre></div><p><strong>Applications</strong>:</p>
+<ul>
+<li>Clustering (K-means, DBSCAN)</li>
+<li>Dimensionality Reduction (PCA, t-SNE)</li>
+<li>Anomaly Detection</li>
+<li>Association Rules</li>
+</ul>
+<h3 id="reinforcement-learning">Reinforcement Learning<a hidden class="anchor" aria-hidden="true" href="#reinforcement-learning">#</a></h3>
+<p>Learning through interaction and feedback:</p>
+<ul>
+<li><strong>Agent</strong>: The learner/decision maker</li>
+<li><strong>Environment</strong>: What the agent interacts with</li>
+<li><strong>Actions</strong>: What the agent can do</li>
+<li><strong>Rewards</strong>: Feedback from environment</li>
+<li><strong>Policy</strong>: Strategy for choosing actions</li>
+</ul>
+<h2 id="the-machine-learning-workflow">The Machine Learning Workflow<a hidden class="anchor" aria-hidden="true" href="#the-machine-learning-workflow">#</a></h2>
+<h3 id="1-data-collection">1. Data Collection<a hidden class="anchor" aria-hidden="true" href="#1-data-collection">#</a></h3>
+<p>Gather relevant, representative data</p>
+<h3 id="2-data-preprocessing">2. Data Preprocessing<a hidden class="anchor" aria-hidden="true" href="#2-data-preprocessing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Handle missing values</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>fillna(data<span style="color:#f92672">.</span>mean())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale features</span>
+</span></span><span style="display:flex;"><span>scaler <span style="color:#f92672">=</span> StandardScaler()
+</span></span><span style="display:flex;"><span>scaled_data <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>fit_transform(data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encode categorical variables</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> LabelEncoder
+</span></span><span style="display:flex;"><span>encoder <span style="color:#f92672">=</span> LabelEncoder()
+</span></span><span style="display:flex;"><span>encoded_labels <span style="color:#f92672">=</span> encoder<span style="color:#f92672">.</span>fit_transform(categories)
+</span></span></code></pre></div><h3 id="3-feature-engineering">3. Feature Engineering<a hidden class="anchor" aria-hidden="true" href="#3-feature-engineering">#</a></h3>
+<p>Create meaningful representations:</p>
+<ul>
+<li>Domain knowledge application</li>
+<li>Feature selection</li>
+<li>Feature extraction</li>
+<li>Dimensionality reduction</li>
+</ul>
+<h3 id="4-model-selection">4. Model Selection<a hidden class="anchor" aria-hidden="true" href="#4-model-selection">#</a></h3>
+<p>Choose appropriate algorithms based on:</p>
+<ul>
+<li>Problem type (classification, regression, clustering)</li>
+<li>Data characteristics</li>
+<li>Performance requirements</li>
+<li>Interpretability needs</li>
+</ul>
+<h3 id="5-training--validation">5. Training &amp; Validation<a hidden class="anchor" aria-hidden="true" href="#5-training--validation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_val_score
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cross-validation</span>
+</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> cross_val_score(model, X, y, cv<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Accuracy: </span><span style="color:#e6db74">{</span>scores<span style="color:#f92672">.</span>mean()<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> (+/- </span><span style="color:#e6db74">{</span>scores<span style="color:#f92672">.</span>std()<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>)
+</span></span></code></pre></div><h3 id="6-hyperparameter-tuning">6. Hyperparameter Tuning<a hidden class="anchor" aria-hidden="true" href="#6-hyperparameter-tuning">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> GridSearchCV
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>param_grid <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;n_estimators&#39;</span>: [<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;max_depth&#39;</span>: [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">15</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;min_samples_split&#39;</span>: [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>grid_search <span style="color:#f92672">=</span> GridSearchCV(
+</span></span><span style="display:flex;"><span>    RandomForestClassifier(),
+</span></span><span style="display:flex;"><span>    param_grid,
+</span></span><span style="display:flex;"><span>    cv<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>    scoring<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;accuracy&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>grid_search<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>best_model <span style="color:#f92672">=</span> grid_search<span style="color:#f92672">.</span>best_estimator_
+</span></span></code></pre></div><h3 id="7-evaluation">7. Evaluation<a hidden class="anchor" aria-hidden="true" href="#7-evaluation">#</a></h3>
+<p>Use appropriate metrics:</p>
+<p><strong>Classification</strong>:</p>
+<ul>
+<li>Accuracy, Precision, Recall</li>
+<li>F1-Score</li>
+<li>ROC-AUC</li>
+<li>Confusion Matrix</li>
+</ul>
+<p><strong>Regression</strong>:</p>
+<ul>
+<li>Mean Squared Error (MSE)</li>
+<li>Root Mean Squared Error (RMSE)</li>
+<li>Mean Absolute Error (MAE)</li>
+<li>R² Score</li>
+</ul>
+<h2 id="common-challenges">Common Challenges<a hidden class="anchor" aria-hidden="true" href="#common-challenges">#</a></h2>
+<h3 id="overfitting">Overfitting<a hidden class="anchor" aria-hidden="true" href="#overfitting">#</a></h3>
+<p>Model performs well on training data but poorly on new data.</p>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>Cross-validation</li>
+<li>Regularization (L1, L2)</li>
+<li>More training data</li>
+<li>Simpler models</li>
+<li>Early stopping</li>
+</ul>
+<h3 id="underfitting">Underfitting<a hidden class="anchor" aria-hidden="true" href="#underfitting">#</a></h3>
+<p>Model is too simple to capture patterns.</p>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>More complex models</li>
+<li>Better features</li>
+<li>Reduce regularization</li>
+<li>Train longer</li>
+</ul>
+<h3 id="class-imbalance">Class Imbalance<a hidden class="anchor" aria-hidden="true" href="#class-imbalance">#</a></h3>
+<p>Unequal representation of classes.</p>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>Resampling (over/under-sampling)</li>
+<li>Class weights</li>
+<li>Synthetic data (SMOTE)</li>
+<li>Anomaly detection approaches</li>
+</ul>
+<h3 id="curse-of-dimensionality">Curse of Dimensionality<a hidden class="anchor" aria-hidden="true" href="#curse-of-dimensionality">#</a></h3>
+<p>Too many features relative to samples.</p>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>Feature selection</li>
+<li>Dimensionality reduction</li>
+<li>More data</li>
+<li>Regularization</li>
+</ul>
+<h2 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h2>
+<h3 id="data-splitting">Data Splitting<a hidden class="anchor" aria-hidden="true" href="#data-splitting">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Train, validation, and test sets</span>
+</span></span><span style="display:flex;"><span>X_train, X_temp, y_train, y_temp <span style="color:#f92672">=</span> train_test_split(
+</span></span><span style="display:flex;"><span>    X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_val, X_test, y_val, y_test <span style="color:#f92672">=</span> train_test_split(
+</span></span><span style="display:flex;"><span>    X_temp, y_temp, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="pipeline-creation">Pipeline Creation<a hidden class="anchor" aria-hidden="true" href="#pipeline-creation">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.pipeline <span style="color:#f92672">import</span> Pipeline
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pipeline <span style="color:#f92672">=</span> Pipeline([
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#39;scaler&#39;</span>, StandardScaler()),
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#39;pca&#39;</span>, PCA(n_components<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)),
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#39;classifier&#39;</span>, LogisticRegression())
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pipeline<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span></code></pre></div><h3 id="model-persistence">Model Persistence<a hidden class="anchor" aria-hidden="true" href="#model-persistence">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> joblib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save model</span>
+</span></span><span style="display:flex;"><span>joblib<span style="color:#f92672">.</span>dump(model, <span style="color:#e6db74">&#39;model.pkl&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load model</span>
+</span></span><span style="display:flex;"><span>loaded_model <span style="color:#f92672">=</span> joblib<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;model.pkl&#39;</span>)
+</span></span></code></pre></div><h2 id="gradient-descent">Gradient Descent<a hidden class="anchor" aria-hidden="true" href="#gradient-descent">#</a></h2>
+<p>The optimization algorithm powering most ML:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gradient_descent</span>(X, y, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.01</span>, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>):
+</span></span><span style="display:flex;"><span>    m, n <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>shape
+</span></span><span style="display:flex;"><span>    weights <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(n)
+</span></span><span style="display:flex;"><span>    bias <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(epochs):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Forward pass</span>
+</span></span><span style="display:flex;"><span>        predictions <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(X, weights) <span style="color:#f92672">+</span> bias
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Compute gradients</span>
+</span></span><span style="display:flex;"><span>        dw <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>m) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>dot(X<span style="color:#f92672">.</span>T, (predictions <span style="color:#f92672">-</span> y))
+</span></span><span style="display:flex;"><span>        db <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>m) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>sum(predictions <span style="color:#f92672">-</span> y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Update parameters</span>
+</span></span><span style="display:flex;"><span>        weights <span style="color:#f92672">-=</span> learning_rate <span style="color:#f92672">*</span> dw
+</span></span><span style="display:flex;"><span>        bias <span style="color:#f92672">-=</span> learning_rate <span style="color:#f92672">*</span> db
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> weights, bias
+</span></span></code></pre></div><h2 id="model-interpretation">Model Interpretation<a hidden class="anchor" aria-hidden="true" href="#model-interpretation">#</a></h2>
+<p>Understanding model decisions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Feature importance</span>
+</span></span><span style="display:flex;"><span>importances <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>feature_importances_
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> feature, importance <span style="color:#f92672">in</span> zip(feature_names, importances):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>feature<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>importance<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Partial dependence plots</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.inspection <span style="color:#f92672">import</span> PartialDependenceDisplay
+</span></span><span style="display:flex;"><span>PartialDependenceDisplay<span style="color:#f92672">.</span>from_estimator(model, X, features<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Machine learning is a powerful toolkit for extracting insights from data. Success requires understanding fundamentals, careful data preparation, thoughtful model selection, and rigorous evaluation.</p>
+<p>The field continues to evolve rapidly, but these core principles remain essential for any practitioner.</p>
+<hr>
+<p><em>Learn, iterate, improve.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/workspace-domain-repo/tags/machine-learning/">Machine Learning</a></li>
+      <li><a href="http://localhost:1313/workspace-domain-repo/tags/basics/">Basics</a></li>
+      <li><a href="http://localhost:1313/workspace-domain-repo/tags/ai/">AI</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/workspace-domain-repo/posts/transformer-architecture/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>The Transformer Architecture Revolution</span>
+  </a>
+  <a class="next" href="http://localhost:1313/workspace-domain-repo/posts/welcome/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Welcome to AI Research Hub</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on x"
+            href="https://x.com/intent/tweet/?text=Machine%20Learning%20Fundamentals&amp;url=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f&amp;hashtags=MachineLearning%2cBasics%2cAI">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f&amp;title=Machine%20Learning%20Fundamentals&amp;summary=Machine%20Learning%20Fundamentals&amp;source=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f&title=Machine%20Learning%20Fundamentals">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on whatsapp"
+            href="https://api.whatsapp.com/send?text=Machine%20Learning%20Fundamentals%20-%20http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on telegram"
+            href="https://telegram.me/share/url?text=Machine%20Learning%20Fundamentals&amp;url=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Machine Learning Fundamentals on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Machine%20Learning%20Fundamentals&u=http%3a%2f%2flocalhost%3a1313%2fworkspace-domain-repo%2fposts%2fmachine-learning-fundamentals%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/workspace-domain-repo/">AI Research &amp; Innovation</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+<script>
+
+class ParticleSystem {
+    constructor() {
+        this.canvas = document.getElementById('particle-canvas');
+        if (!this.canvas) return;
+
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.connections = [];
+        this.mousePos = { x: 0, y: 0 };
+
+        this.resize();
+        this.init();
+        this.animate();
+
+        window.addEventListener('resize', () => this.resize());
+        document.addEventListener('mousemove', (e) => {
+            this.mousePos.x = e.clientX;
+            this.mousePos.y = e.clientY;
+        });
+    }
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    init() {
+        const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 15000);
+        for (let i = 0; i < particleCount; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: Math.random() * 2 + 1,
+                opacity: Math.random() * 0.5 + 0.2
+            });
+        }
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        
+        this.particles.forEach((p, i) => {
+            
+            p.x += p.vx;
+            p.y += p.vy;
+
+            
+            const dx = this.mousePos.x - p.x;
+            const dy = this.mousePos.y - p.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+                const force = (150 - distance) / 150;
+                p.vx -= (dx / distance) * force * 0.2;
+                p.vy -= (dy / distance) * force * 0.2;
+            }
+
+            
+            if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+
+            
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+            this.ctx.fill();
+
+            
+            this.particles.slice(i + 1).forEach(p2 => {
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 120) {
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(p.x, p.y);
+                    this.ctx.lineTo(p2.x, p2.y);
+                    const opacity = (1 - distance / 120) * 0.3;
+                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                    this.ctx.lineWidth = 0.5;
+                    this.ctx.stroke();
+                }
+            });
+        });
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+
+class DataStream {
+    constructor() {
+        this.container = document.getElementById('data-stream');
+        if (!this.container) return;
+
+        this.createStreams();
+    }
+
+    createStreams() {
+        const streamCount = 5;
+        for (let i = 0; i < streamCount; i++) {
+            setTimeout(() => this.createStream(), i * 800);
+        }
+
+        setInterval(() => this.createStream(), 4000);
+    }
+
+    createStream() {
+        const stream = document.createElement('div');
+        stream.className = 'data-particle';
+        stream.style.left = Math.random() * 100 + '%';
+        stream.style.animationDelay = Math.random() * 2 + 's';
+        stream.style.animationDuration = (Math.random() * 3 + 3) + 's';
+
+        const char = ['0', '1', '▪', '▫', '◆', '○'][Math.floor(Math.random() * 6)];
+        stream.textContent = char;
+
+        this.container.appendChild(stream);
+
+        setTimeout(() => stream.remove(), 6000);
+    }
+}
+
+
+class NeuralNetwork {
+    constructor() {
+        this.container = document.getElementById('neural-network');
+        if (!this.container) return;
+
+        this.createNodes();
+    }
+
+    createNodes() {
+        const nodeCount = 8;
+        for (let i = 0; i < nodeCount; i++) {
+            const node = document.createElement('div');
+            node.className = 'neural-node';
+            node.style.left = Math.random() * 100 + '%';
+            node.style.top = Math.random() * 100 + '%';
+            node.style.animationDelay = Math.random() * 3 + 's';
+            node.style.animationDuration = (Math.random() * 2 + 3) + 's';
+
+            this.container.appendChild(node);
+        }
+    }
+}
+
+
+class MatrixEffect {
+    constructor() {
+        const posts = document.querySelectorAll('.post-entry, .first-entry');
+        posts.forEach(post => {
+            post.addEventListener('mouseenter', () => {
+                this.createMatrixRain(post);
+            });
+        });
+    }
+
+    createMatrixRain(element) {
+        const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const rain = document.createElement('div');
+        rain.className = 'matrix-rain';
+        rain.style.left = Math.random() * 100 + '%';
+        rain.textContent = chars[Math.floor(Math.random() * chars.length)];
+
+        element.appendChild(rain);
+        setTimeout(() => rain.remove(), 1500);
+    }
+}
+
+
+class ScanLine {
+    constructor() {
+        const scanLine = document.createElement('div');
+        scanLine.className = 'scan-line';
+        document.body.appendChild(scanLine);
+    }
+}
+
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScientificEffects);
+} else {
+    initScientificEffects();
+}
+
+function initScientificEffects() {
+    new ParticleSystem();
+    new DataStream();
+    new NeuralNetwork();
+    new MatrixEffect();
+    new ScanLine();
+
+    
+    const title = document.querySelector('.home-info .entry-header');
+    if (title) {
+        setInterval(() => {
+            title.style.textShadow = '0 0 10px rgba(255,255,255,0.8)';
+            setTimeout(() => {
+                title.style.textShadow = 'none';
+            }, 100);
+        }, 5000);
+    }
+}
+</script>
+
+<style>
+ 
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+ 
+#data-stream {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.data-particle {
+    position: absolute;
+    top: -20px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    animation: fall linear forwards;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+ 
+#neural-network {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.neural-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: pulse ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0.8;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+ 
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    animation: matrix-fall 1.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+ 
+.scan-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+ 
+.post-entry:hover,
+.first-entry:hover {
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.1),
+        inset 0 0 30px rgba(255, 255, 255, 0.05),
+        0 0 60px rgba(255, 255, 255, 0.05) !important;
+}
+
+ 
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.post-title::after {
+    content: '▊';
+    animation: blink 1s infinite;
+    margin-left: 5px;
+    opacity: 0.3;
+}
+
+ 
+.main {
+    position: relative;
+}
+
+.main::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.03) 3px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.03) 3px);
+    background-size: 100px 100px;
+    pointer-events: none;
+    z-index: 1;
+    animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+ 
+.post-entry::before,
+.first-entry::before {
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    background-size: 200% 200%;
+}
+
+.post-entry:hover::before,
+.first-entry:hover::before {
+    animation: holographic 2s ease infinite;
+}
+
+@keyframes holographic {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+</style>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Categories on AI Research &amp; Innovation</title><link>https://daily2translate.github.io/workspace-domain-repo/categories/</link><description>Recent content in Categories on AI Research &amp; Innovation</description><generator>Hugo -- 0.155.3</generator><language>en-us</language><lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://daily2translate.github.io/workspace-domain-repo/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Research</title><link>https://daily2translate.github.io/workspace-domain-repo/categories/research/</link><pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/categories/research/</guid><description/></item><item><title>Education</title><link>https://daily2translate.github.io/workspace-domain-repo/categories/education/</link><pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/categories/education/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on AI Research &amp; Innovation</title>
+    <link>http://localhost:1313/workspace-domain-repo/categories/</link>
+    <description>Recent content in Categories on AI Research &amp; Innovation</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/workspace-domain-repo/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/workspace-domain-repo/categories/research/</link>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/categories/research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Education</title>
+      <link>http://localhost:1313/workspace-domain-repo/categories/education/</link>
+      <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/categories/education/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

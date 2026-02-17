@@ -1,20 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>AI Research &amp; Innovation</title><link>https://daily2translate.github.io/workspace-domain-repo/</link><description>Recent content on AI Research &amp; Innovation</description><generator>Hugo -- 0.155.3</generator><language>en-us</language><lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://daily2translate.github.io/workspace-domain-repo/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://daily2translate.github.io/workspace-domain-repo/about/</link><pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/about/</guid><description>&lt;h1 id="ai-research--innovation-hub"&gt;AI Research &amp;amp; Innovation Hub&lt;/h1&gt;
-&lt;h2 id="mission"&gt;Mission&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AI Research &amp; Innovation</title>
+    <link>http://localhost:1313/workspace-domain-repo/</link>
+    <description>Recent content on AI Research &amp; Innovation</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/workspace-domain-repo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/workspace-domain-repo/about/</link>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/about/</guid>
+      <description>&lt;h1 id=&#34;ai-research--innovation-hub&#34;&gt;AI Research &amp;amp; Innovation Hub&lt;/h1&gt;
+&lt;h2 id=&#34;mission&#34;&gt;Mission&lt;/h2&gt;
 &lt;p&gt;Advancing the frontiers of artificial intelligence through rigorous research, thoughtful experimentation, and open knowledge sharing.&lt;/p&gt;
-&lt;h2 id="focus-areas"&gt;Focus Areas&lt;/h2&gt;
-&lt;h3 id="machine-learning"&gt;Machine Learning&lt;/h3&gt;
+&lt;h2 id=&#34;focus-areas&#34;&gt;Focus Areas&lt;/h2&gt;
+&lt;h3 id=&#34;machine-learning&#34;&gt;Machine Learning&lt;/h3&gt;
 &lt;p&gt;Exploring supervised, unsupervised, and reinforcement learning paradigms to solve real-world problems.&lt;/p&gt;
-&lt;h3 id="deep-learning"&gt;Deep Learning&lt;/h3&gt;
+&lt;h3 id=&#34;deep-learning&#34;&gt;Deep Learning&lt;/h3&gt;
 &lt;p&gt;Investigating neural network architectures from convolutional networks to transformers and beyond.&lt;/p&gt;
-&lt;h3 id="natural-language-processing"&gt;Natural Language Processing&lt;/h3&gt;
+&lt;h3 id=&#34;natural-language-processing&#34;&gt;Natural Language Processing&lt;/h3&gt;
 &lt;p&gt;Understanding and generating human language through computational methods.&lt;/p&gt;
-&lt;h3 id="computer-vision"&gt;Computer Vision&lt;/h3&gt;
-&lt;p&gt;Teaching machines to see and interpret visual information.&lt;/p&gt;</description></item><item><title>Deep Dive into Neural Networks</title><link>https://daily2translate.github.io/workspace-domain-repo/posts/neural-networks-deep-dive/</link><pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/posts/neural-networks-deep-dive/</guid><description>Exploring the architecture and mathematics behind modern neural networks</description></item><item><title>The Transformer Architecture Revolution</title><link>https://daily2translate.github.io/workspace-domain-repo/posts/transformer-architecture/</link><pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/posts/transformer-architecture/</guid><description>Understanding the attention mechanism that powers modern AI</description></item><item><title>Machine Learning Fundamentals</title><link>https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/</link><pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/posts/machine-learning-fundamentals/</guid><description>Core concepts every AI practitioner should understand</description></item><item><title>Welcome to AI Research Hub</title><link>https://daily2translate.github.io/workspace-domain-repo/posts/welcome/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/posts/welcome/</guid><description>&lt;h2 id="welcome-to-the-future-of-intelligence"&gt;Welcome to the Future of Intelligence&lt;/h2&gt;
+&lt;h3 id=&#34;computer-vision&#34;&gt;Computer Vision&lt;/h3&gt;
+&lt;p&gt;Teaching machines to see and interpret visual information.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deep Dive into Neural Networks</title>
+      <link>http://localhost:1313/workspace-domain-repo/posts/neural-networks-deep-dive/</link>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/posts/neural-networks-deep-dive/</guid>
+      <description>Exploring the architecture and mathematics behind modern neural networks</description>
+    </item>
+    <item>
+      <title>The Transformer Architecture Revolution</title>
+      <link>http://localhost:1313/workspace-domain-repo/posts/transformer-architecture/</link>
+      <pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/posts/transformer-architecture/</guid>
+      <description>Understanding the attention mechanism that powers modern AI</description>
+    </item>
+    <item>
+      <title>Machine Learning Fundamentals</title>
+      <link>http://localhost:1313/workspace-domain-repo/posts/machine-learning-fundamentals/</link>
+      <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/posts/machine-learning-fundamentals/</guid>
+      <description>Core concepts every AI practitioner should understand</description>
+    </item>
+    <item>
+      <title>Welcome to AI Research Hub</title>
+      <link>http://localhost:1313/workspace-domain-repo/posts/welcome/</link>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/posts/welcome/</guid>
+      <description>&lt;h2 id=&#34;welcome-to-the-future-of-intelligence&#34;&gt;Welcome to the Future of Intelligence&lt;/h2&gt;
 &lt;p&gt;Welcome to our AI Research &amp;amp; Innovation Hub, where we explore the cutting edge of artificial intelligence, machine learning, and computational thinking.&lt;/p&gt;
-&lt;h3 id="what-youll-find-here"&gt;What You&amp;rsquo;ll Find Here&lt;/h3&gt;
+&lt;h3 id=&#34;what-youll-find-here&#34;&gt;What You&amp;rsquo;ll Find Here&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Research Articles&lt;/strong&gt;: Deep dives into neural networks, transformers, and modern AI architectures&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;: Practical guides for implementing machine learning algorithms&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;: Critical examination of AI trends, breakthroughs, and challenges&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Code&lt;/strong&gt;: Working examples demonstrating key concepts&lt;/p&gt;
-&lt;h3 id="our-philosophy"&gt;Our Philosophy&lt;/h3&gt;
-&lt;p&gt;Artificial intelligence represents one of humanity&amp;rsquo;s most profound technological endeavors. We believe in:&lt;/p&gt;</description></item></channel></rss>
+&lt;h3 id=&#34;our-philosophy&#34;&gt;Our Philosophy&lt;/h3&gt;
+&lt;p&gt;Artificial intelligence represents one of humanity&amp;rsquo;s most profound technological endeavors. We believe in:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,9 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Introduction on AI Research &amp; Innovation</title><link>https://daily2translate.github.io/workspace-domain-repo/tags/introduction/</link><description>Recent content in Introduction on AI Research &amp; Innovation</description><generator>Hugo -- 0.155.3</generator><language>en-us</language><lastBuildDate>Wed, 14 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://daily2translate.github.io/workspace-domain-repo/tags/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to AI Research Hub</title><link>https://daily2translate.github.io/workspace-domain-repo/posts/welcome/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://daily2translate.github.io/workspace-domain-repo/posts/welcome/</guid><description>&lt;h2 id="welcome-to-the-future-of-intelligence"&gt;Welcome to the Future of Intelligence&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Introduction on AI Research &amp; Innovation</title>
+    <link>http://localhost:1313/workspace-domain-repo/tags/introduction/</link>
+    <description>Recent content in Introduction on AI Research &amp; Innovation</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/workspace-domain-repo/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to AI Research Hub</title>
+      <link>http://localhost:1313/workspace-domain-repo/posts/welcome/</link>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/workspace-domain-repo/posts/welcome/</guid>
+      <description>&lt;h2 id=&#34;welcome-to-the-future-of-intelligence&#34;&gt;Welcome to the Future of Intelligence&lt;/h2&gt;
 &lt;p&gt;Welcome to our AI Research &amp;amp; Innovation Hub, where we explore the cutting edge of artificial intelligence, machine learning, and computational thinking.&lt;/p&gt;
-&lt;h3 id="what-youll-find-here"&gt;What You&amp;rsquo;ll Find Here&lt;/h3&gt;
+&lt;h3 id=&#34;what-youll-find-here&#34;&gt;What You&amp;rsquo;ll Find Here&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Research Articles&lt;/strong&gt;: Deep dives into neural networks, transformers, and modern AI architectures&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;: Practical guides for implementing machine learning algorithms&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;: Critical examination of AI trends, breakthroughs, and challenges&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Code&lt;/strong&gt;: Working examples demonstrating key concepts&lt;/p&gt;
-&lt;h3 id="our-philosophy"&gt;Our Philosophy&lt;/h3&gt;
-&lt;p&gt;Artificial intelligence represents one of humanity&amp;rsquo;s most profound technological endeavors. We believe in:&lt;/p&gt;</description></item></channel></rss>
+&lt;h3 id=&#34;our-philosophy&#34;&gt;Our Philosophy&lt;/h3&gt;
+&lt;p&gt;Artificial intelligence represents one of humanity&amp;rsquo;s most profound technological endeavors. We believe in:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
