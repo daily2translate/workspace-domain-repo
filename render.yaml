@@ -1,9 +1,9 @@
 services:
   - type: web
     name: wordpress
-    runtime: docker
-    plan: free
+    env: docker
     dockerfilePath: ./Dockerfile
+    plan: free
     envVars:
       - key: WORDPRESS_DB_HOST
         fromDatabase:

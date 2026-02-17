@@ -1,12 +1,16 @@
 FROM wordpress:latest
 
-# Copy custom entrypoint script for PORT configuration
-COPY docker-entrypoint.sh /usr/local/bin/custom-entrypoint.sh
-RUN chmod +x /usr/local/bin/custom-entrypoint.sh
+# Install additional PHP extensions
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Expose port (Render will use PORT env var)
+# Set up WordPress
+ENV WORDPRESS_DB_HOST=${DATABASE_URL}
+ENV WORDPRESS_DB_USER=wordpress
+ENV WORDPRESS_DB_PASSWORD=wordpress
+ENV WORDPRESS_DB_NAME=wordpress
+
+# Expose port 80
 EXPOSE 80
 
-# Use custom entrypoint
-ENTRYPOINT ["/usr/local/bin/custom-entrypoint.sh"]
+# Start Apache
 CMD ["apache2-foreground"]

@@ -1,13 +1,11 @@
-# WordPress files
-wp-config.php
-wp-content/uploads/
-wp-content/cache/
+# Ignore everything by default
+*
 
-# Nx cache
-.nx/installation
-.nx/cache
-.nx/workspace-data
-
-# Environment
-.env
-*.log
+# But track these
+!.gitignore
+!index.html
+!README.md
+!PROJECT_STATUS.md
+!supabase-schema.sql
+!n8n-automation/
+!n8n-automation/**
