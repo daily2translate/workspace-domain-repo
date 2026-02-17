@@ -4,8 +4,24 @@
 # But track these
 !.gitignore
 !index.html
+!index.xml
+!sitemap.xml
+!404.html
+!.nojekyll
 !README.md
 !PROJECT_STATUS.md
 !supabase-schema.sql
 !n8n-automation/
 !n8n-automation/**
+!hugo-site/
+!hugo-site/**
+!assets/
+!assets/**
+!posts/
+!posts/**
+!categories/
+!categories/**
+!tags/
+!tags/**
+!page/
+!page/**

@@ -1,0 +1,8 @@
+baseURL = 'https://daily2translate.github.io/workspace-domain-repo/'
+languageCode = 'en-us'
+title = 'My Portfolio & Blog'
+theme = 'PaperMod'
+
+[params]
+  ShowShareButtons = true
+  ShowReadingTime = true
